@@ -10,7 +10,6 @@
 </h1>
 
 <br/>
-<a href="https://www.dr.dk">Hello Servlet</a>
 
 <form action="hello-servlet">
     <br/>
