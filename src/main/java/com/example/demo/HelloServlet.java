@@ -15,6 +15,7 @@ public class HelloServlet extends HttpServlet
         message = "Hello World!";
     }
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
         response.setContentType("text/html");
@@ -26,13 +27,9 @@ public class HelloServlet extends HttpServlet
         out.println("</body></html>");
 
         String navn = request.getParameter("navn");
-
-        // System.out.println("Du hedder " + navn);
-
-        // out.println("<h1>" + "Du hedder " + navn + "</h1>");
-
-        request.setAttribute("mitNavn", navn);
-        request.getRequestDispatcher("WEB-INF/indefor.jsp").forward(request, response);
+        request.setAttribute("navn", navn);
+        request.getSession().setAttribute("navn", navn);
+        request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }
 
     public void destroy()
