@@ -23,6 +23,12 @@ public class HelloServlet extends HttpServlet
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+
+        String navn = request.getParameter("navn");
+
+        System.out.println("Du hedder " + navn);
+
+        out.println("<h1>" + "Du hedder " + navn + "</h1>");
     }
 
     public void destroy()
