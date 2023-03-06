@@ -9,7 +9,7 @@
     <br/><br/>
 </h1>
 
-<p>Det er mandag morgen stadig!</p>
+<p>Det er mandag morgen!</p>
 
 <br/>
 <a href="https://www.dr.dk">Hello Servlet</a>
