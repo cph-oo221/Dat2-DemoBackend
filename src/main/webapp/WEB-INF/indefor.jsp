@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<h1> Du er nu indefor</h1>
+<h1> Du er nu indefor ${requestScope.mitNavn}</h1>
+
 
 </body>
 </html>

@@ -31,6 +31,7 @@ public class HelloServlet extends HttpServlet
 
         // out.println("<h1>" + "Du hedder " + navn + "</h1>");
 
+        request.setAttribute("mitNavn", navn);
         request.getRequestDispatcher("WEB-INF/indefor.jsp").forward(request, response);
     }
 
