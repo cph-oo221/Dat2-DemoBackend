@@ -28,6 +28,5 @@
         <input type="submit" value="Tilbage til forsiden">
     </form>
 </div>
-
 </body>
 </html>
