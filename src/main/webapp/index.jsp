@@ -12,6 +12,18 @@
 <p>Det er mandag morgen stadig!</p>
 
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="https://www.dr.dk">Hello Servlet</a>
+
+<form action="hello-servlet">
+    <br/>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<%--<a href="hello-servlet">Hello Servlet</a>--%>
 </body>
 </html>
