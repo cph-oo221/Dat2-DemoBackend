@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.io.*;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
@@ -14,7 +15,7 @@ public class HelloServlet extends HttpServlet
         message = "Hello World!";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
         response.setContentType("text/html");
 
@@ -26,9 +27,11 @@ public class HelloServlet extends HttpServlet
 
         String navn = request.getParameter("navn");
 
-        System.out.println("Du hedder " + navn);
+        // System.out.println("Du hedder " + navn);
 
-        out.println("<h1>" + "Du hedder " + navn + "</h1>");
+        // out.println("<h1>" + "Du hedder " + navn + "</h1>");
+
+        request.getRequestDispatcher("WEB-INF/indefor.jsp").forward(request, response);
     }
 
     public void destroy()
