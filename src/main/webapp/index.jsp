@@ -9,8 +9,6 @@
     <br/><br/>
 </h1>
 
-<p>Det er mandag!</p>
-
 <br/>
 <a href="https://www.dr.dk">Hello Servlet</a>
 
