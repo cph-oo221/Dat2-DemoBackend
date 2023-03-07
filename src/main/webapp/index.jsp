@@ -16,11 +16,17 @@
     <h1><%= "Velkommen til forsiden " %></h1>
 </div>
 
+<!-- Error message for login-->
+${requestScope.errorMSG}
+
 <div class="text-center mt-3">
     <form action="hello-servlet">
         <br/>
         <label for="navn"> <b> Skriv dit navn: </b> </label><br>
         <input type="text" id="navn" name="navn" value="Oskar"><br>
+
+        <label for="password"> <b> Skriv din kode: </b> </label><br>
+        <input type="password" id="password" name="password" placeholder="Password"><br>
         <br/>
         <input type="submit" class="btn btn-primary" value="Enter">
     </form>
