@@ -16,10 +16,10 @@ public class HelloServlet extends HttpServlet
 {
     private String message;
 
+    private List<Person> personList = new ArrayList<>();
+
     public void init()
     {
-        List<Person> personList = new ArrayList<>();
-
         personList.add(new Person("Oskar", "123"));
         personList.add(new Person("Lars", "420"));
         personList.add(new Person("Bob", "360"));
