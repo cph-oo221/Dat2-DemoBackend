@@ -24,7 +24,11 @@
 
 <div class="text-center mt-3">
     <form action="min-servlet">
-        <input type="submit" value="Submit ">
+        <br/>
+        <label for="tal"> <b> Skriv dit navn: </b> </label><br>
+        <input type="number" id="tal" name="tal" value="0"><br>
+        <br/>
+        <input type="submit" value="Submit">
     </form>
 </div>
 </body>
