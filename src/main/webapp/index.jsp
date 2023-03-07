@@ -31,6 +31,9 @@
         <label for="password"> <b> Skriv din kode: </b> </label><br>
         <input type="password" id="password" name="password" placeholder="Password"><br>
         <br/>
+
+        <!-- <input type="url" class="btn btn-link" value="Sing up"> -->
+
         <input type="submit" class="btn btn-primary" value="Enter">
     </form>
 </div>
