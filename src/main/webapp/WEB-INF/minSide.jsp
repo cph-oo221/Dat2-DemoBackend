@@ -23,7 +23,6 @@
 </div>
 
 
-
 <div class="text-center mt-3">
     <form action="min-servlet">
         <br/>
@@ -35,33 +34,43 @@
 </div>
 
 
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
 
-<div class="text-center mt-3">
-    <form action="slet-user-servlet">
-        <br/>
-        <label><b> Fjerne din bruger: ${sessionScope.navn} </b></label><br>
-        <input type="submit" class="btn btn-primary" value="Slet Bruger">
-    </form>
+                <div class="col">
+                    <div class="text-center mt-3">
+                        <form action="slet-user-servlet">
+                            <br/>
+                            <label><b> Fjerne din bruger: ${sessionScope.navn} </b></label><br>
+                            <input type="submit" class="btn btn-primary mt-2" value="Slet Bruger">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="text-center mt-3">
+                        <form action="change-password-servlet">
+                            <br/>
+                            <label for="newpassword"><b> Skift kodeord for brugen: ${sessionScope.navn} </b></label><br>
+
+                            <input type="password" id="newpassword" class="mt-2" name="newpassword" placeholder="New password">
+                            <input type="submit" class="btn btn-primary mb-1" value="Enter">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
-
-
-
-<div class="text-center mt-3">
-    <form action="change-password-servlet">
-        <br/>
-        <label for="newpassword"><b> Skift kodeord for brugen: ${sessionScope.navn} </b></label><br>
-
-        <input type="password" id="newpassword" name="newpassword" placeholder="New password"><br>
-        <input type="submit" class="btn btn-primary" value="Enter">
-    </form>
-</div>
-
-
 
 <footer class="mt-4">
     <div class="mt-5 p-2">
         <p><b>Session id: ${requestScope.id}</b></p>
     </div>
 </footer>
+
 </body>
 </html>
