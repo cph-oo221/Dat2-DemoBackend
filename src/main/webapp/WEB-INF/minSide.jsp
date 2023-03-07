@@ -34,6 +34,19 @@
     </form>
 </div>
 
+
+
+<div class="text-center mt-3">
+    <form action="slet-user-servlet">
+        <br/>
+        <label><b> Fjerne din bruger: ${sessionScope.navn} </b></label><br>
+        <input type="submit" class="btn btn-primary" value="Slet Bruger">
+    </form>
+</div>
+
+
+
+
 <footer class="mt-4">
     <div class="mt-5 p-2">
         <p><b>Session id: ${requestScope.id}</b></p>

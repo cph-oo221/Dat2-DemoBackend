@@ -28,5 +28,7 @@
         <input type="submit" class="btn btn-primary" value="Log af">
     </form>
 </div>
+
+
 </body>
 </html>
