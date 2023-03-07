@@ -17,7 +17,6 @@
 </div>
 
 <!-- Error message for login-->
-
 <div class="text-center mt-3 text-color-red">
     ${requestScope.errorMSG}
 </div>

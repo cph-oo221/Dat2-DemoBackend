@@ -14,7 +14,6 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet
 {
-    private String message;
 
     private List<Person> personList = new ArrayList<>();
 
@@ -75,9 +74,5 @@ public class HelloServlet extends HttpServlet
         session.setAttribute("navn", navn);
 
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
-    }
-
-    public void destroy()
-    {
     }
 }
