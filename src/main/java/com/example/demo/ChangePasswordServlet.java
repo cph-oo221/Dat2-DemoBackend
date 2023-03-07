@@ -6,13 +6,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "SletUserServlet", value = "/slet-user-servlet")
-public class SletUserServlet extends HttpServlet
+@WebServlet(name = "ChangePasswordServlet", value = "/change-password-servlet")
+public class ChangePasswordServlet extends HttpServlet
 {
     @Override
     public void init()
@@ -32,16 +30,21 @@ public class SletUserServlet extends HttpServlet
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
-
         String navn = request.getParameter("navn");
-        String password = request.getParameter("password");
+        String newPassword = request.getParameter("newpassword");
 
         if(personMap.containsKey(navn))
         {
-            personMap.remove(navn, password);
+            personMap.put(navn, new Person(navn, newPassword));
         }
 
-        request.getSession().invalidate();
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        System.out.println(newPassword);
+
+        HttpSession session = request.getSession();
+
+        request.setAttribute("navn", request.getSession().getAttribute("navn"));
+        request.setAttribute("id", request.getSession().getId());
+
+        request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }
 }

@@ -18,6 +18,11 @@ public class HelloServlet extends HttpServlet
 
     private List<Person> personList = new ArrayList<>();
 
+    public List<Person> getPersonList()
+    {
+        return personList;
+    }
+
     public void init()
     {
         personList.add(new Person("Oskar", "123"));

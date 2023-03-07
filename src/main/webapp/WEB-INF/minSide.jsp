@@ -46,6 +46,17 @@
 
 
 
+<div class="text-center mt-3">
+    <form action="change-password-servlet">
+        <br/>
+        <label for="newpassword"><b> Skift kodeord for brugen: ${sessionScope.navn} </b></label><br>
+
+        <input type="password" id="newpassword" name="newpassword" placeholder="New password"><br>
+        <input type="submit" class="btn btn-primary" value="Enter">
+    </form>
+</div>
+
+
 
 <footer class="mt-4">
     <div class="mt-5 p-2">
