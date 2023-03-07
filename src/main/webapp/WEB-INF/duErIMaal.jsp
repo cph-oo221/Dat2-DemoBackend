@@ -19,7 +19,7 @@
 <body>
 
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1> ${requestScope.navn}, du er i mål </h1>
+    <h1> ${requestScope.navn}, du er i mål, nummeret ${requestScope.tal} </h1>
 </div>
 
 

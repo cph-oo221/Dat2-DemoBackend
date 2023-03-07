@@ -11,6 +11,11 @@ public class MinServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        int tal = Integer.parseInt(request.getParameter("tal"));
+        request.setAttribute("tal", tal);
+        request.getSession().setAttribute("tal", tal);
+        request.getRequestDispatcher("WEB-INF/duErIMaal.jsp").forward(request, response);
+
         request.setAttribute("navn", request.getSession().getAttribute("navn"));
         request.getRequestDispatcher("WEB-INF/duErIMaal.jsp").forward(request, response);
     }
