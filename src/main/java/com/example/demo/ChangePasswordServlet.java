@@ -6,19 +6,23 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "ChangePasswordServlet", value = "/change-password-servlet")
 public class ChangePasswordServlet extends HttpServlet
 {
+    //private List<Person> personList = new ArrayList<>();
+
+    private HelloServlet helloServlet = new HelloServlet();
+    private List<Person> personList = helloServlet.getPersonList();
     @Override
     public void init()
     {
-        HelloServlet helloServlet = new HelloServlet();
-
         Map<String, Person> personMap = new HashMap<>();
-        for (Person person : helloServlet.getPersonList())
+        for (Person person : personList)
         {
             personMap.put(person.getNavn(), person);
         }
@@ -37,9 +41,6 @@ public class ChangePasswordServlet extends HttpServlet
         {
             personMap.put(navn, new Person(navn, newPassword));
         }
-
-        System.out.println(newPassword);
-
-        request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

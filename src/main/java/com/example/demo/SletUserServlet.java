@@ -14,13 +14,15 @@ import java.util.Map;
 @WebServlet(name = "SletUserServlet", value = "/slet-user-servlet")
 public class SletUserServlet extends HttpServlet
 {
+    //private List<Person> personList = new ArrayList<>();
+
+    private HelloServlet helloServlet = new HelloServlet();
+    private List<Person> personList = helloServlet.getPersonList();
     @Override
     public void init()
     {
-        HelloServlet helloServlet = new HelloServlet();
-
         Map<String, Person> personMap = new HashMap<>();
-        for (Person person : helloServlet.getPersonList())
+        for (Person person : personList)
         {
             personMap.put(person.getNavn(), person);
         }
