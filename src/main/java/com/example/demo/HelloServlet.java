@@ -48,16 +48,17 @@ public class HelloServlet extends HttpServlet
 
         String navn = request.getParameter("navn");
         String password = request.getParameter("password");
+        String uglydigLogin = "Din kode eller brukernavn er forkert !";
 
         if(!personMap.containsKey(navn))
         {
-            request.setAttribute("errorMSG", "Ugyldig brukernavn !");
+            request.setAttribute("errorMSG", uglydigLogin);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
         if(!personMap.get(navn).getKode().equals(password))
         {
-            request.setAttribute("errorMSG", "Ugyldig passord !");
+            request.setAttribute("errorMSG", uglydigLogin);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 

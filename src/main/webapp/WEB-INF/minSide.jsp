@@ -22,7 +22,7 @@
     <h1>${sessionScope.navn}, du er på din side</h1>
 </div>
 
-dit session id er ${requestScope.id}
+
 
 <div class="text-center mt-3">
     <form action="min-servlet">
@@ -33,5 +33,11 @@ dit session id er ${requestScope.id}
         <input type="submit" class="btn btn-primary" value="Submit">
     </form>
 </div>
+
+<footer class="mt-4">
+    <div class="mt-5 p-2">
+        <p><b>Session id: ${requestScope.id}</b></p>
+    </div>
+</footer>
 </body>
 </html>

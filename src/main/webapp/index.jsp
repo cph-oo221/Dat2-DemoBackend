@@ -17,13 +17,16 @@
 </div>
 
 <!-- Error message for login-->
-${requestScope.errorMSG}
+
+<div class="text-center mt-3 text-color-red">
+    ${requestScope.errorMSG}
+</div>
 
 <div class="text-center mt-3">
     <form action="hello-servlet">
         <br/>
         <label for="navn"> <b> Skriv dit navn: </b> </label><br>
-        <input type="text" id="navn" name="navn" value="Oskar"><br>
+        <input type="text" id="navn" name="navn" placeholder="Username"><br>
 
         <label for="password"> <b> Skriv din kode: </b> </label><br>
         <input type="password" id="password" name="password" placeholder="Password"><br>
