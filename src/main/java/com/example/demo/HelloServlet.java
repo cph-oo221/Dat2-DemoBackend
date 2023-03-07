@@ -61,9 +61,13 @@ public class HelloServlet extends HttpServlet
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
 
+        HttpSession session = request.getSession();
 
         request.setAttribute("navn", navn);
-        request.getSession().setAttribute("navn", navn);
+        request.setAttribute("id", session.getId());
+
+        session.setAttribute("navn", navn);
+
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }
 
