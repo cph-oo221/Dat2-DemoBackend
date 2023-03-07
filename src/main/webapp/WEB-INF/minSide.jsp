@@ -25,7 +25,7 @@
 <div class="text-center mt-3">
     <form action="min-servlet">
         <br/>
-        <label for="tal"> <b> Skriv dit navn: </b> </label><br>
+        <label for="tal"> <b> Skriv dit ynglings tal: </b> </label><br>
         <input type="number" id="tal" name="tal" value="0"><br>
         <br/>
         <input type="submit" value="Submit">

@@ -19,11 +19,11 @@
 <body>
 
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1> ${requestScope.navn}, du er i mål, nummeret ${requestScope.tal} </h1>
+    <h1> ${requestScope.navn}, du er i mål, med nummeret ${requestScope.tal} </h1>
 </div>
 
 
-<div class="text-center mt-3">
+<div class="text-center mt-5 pt-5 text-bold">
     <form action="index.jsp">
         <input type="submit" value="Tilbage til forsiden">
     </form>

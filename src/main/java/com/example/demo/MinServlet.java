@@ -14,7 +14,6 @@ public class MinServlet extends HttpServlet
         int tal = Integer.parseInt(request.getParameter("tal"));
         request.setAttribute("tal", tal);
         request.getSession().setAttribute("tal", tal);
-        request.getRequestDispatcher("WEB-INF/duErIMaal.jsp").forward(request, response);
 
         request.setAttribute("navn", request.getSession().getAttribute("navn"));
         request.getRequestDispatcher("WEB-INF/duErIMaal.jsp").forward(request, response);
