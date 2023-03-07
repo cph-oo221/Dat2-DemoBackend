@@ -72,6 +72,7 @@ public class HelloServlet extends HttpServlet
         request.setAttribute("id", session.getId());
 
         session.setAttribute("navn", navn);
+        session.setAttribute("password", password);
 
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }
