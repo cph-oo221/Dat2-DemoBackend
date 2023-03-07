@@ -25,7 +25,7 @@
 
 <div class="text-center mt-5 pt-5 text-bold">
     <form action="index.jsp">
-        <input type="submit" value="Tilbage til forsiden">
+        <input type="submit" class="btn btn-primary" value="Tilbage til forsiden">
     </form>
 </div>
 </body>

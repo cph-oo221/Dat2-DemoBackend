@@ -22,7 +22,7 @@
         <label for="navn"> <b> Skriv dit navn: </b> </label><br>
         <input type="text" id="navn" name="navn" value="Oskar"><br>
         <br/>
-        <input type="submit" value="Enter">
+        <input type="submit" class="btn btn-primary" value="Enter">
     </form>
 </div>
 </body>
