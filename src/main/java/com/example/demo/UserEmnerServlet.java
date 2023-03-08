@@ -6,6 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 @WebServlet(name = "UserEmnerServlet", value = "/UserEmnerServlet")
@@ -19,6 +20,9 @@ public class UserEmnerServlet extends HttpServlet
         String emne = request.getParameter("emne");
 
         personMap.get(request.getSession().getAttribute("navn")).getEmner().add(emne);
+
+        ArrayList<String> emner = personMap.get(request.getSession().getAttribute("navn")).getEmner();
+        getServletContext().setAttribute("emner", emner);
 
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }

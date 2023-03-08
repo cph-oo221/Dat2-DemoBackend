@@ -99,9 +99,9 @@
         <th>Emner</th>
     </tr>
 
-    <c:forEach var="person" items="${applicationScope.personMap}">
+    <c:forEach var="emner" items="${applicationScope.emner}">
         <tr>
-            <td>${person.value.emner}</td>
+            <td>${emner}</td>
         </tr>
     </c:forEach>
 </table>

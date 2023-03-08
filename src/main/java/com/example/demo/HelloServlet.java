@@ -30,9 +30,6 @@ public class HelloServlet extends HttpServlet
             personMap.put(person.getNavn(), person);
         }
 
-
-        //getServletContext().setAttribute("emner", personList.get(person.getNavn()).getEmner());
-
         getServletContext().setAttribute("personMap", personMap);
     }
 
