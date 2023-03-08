@@ -21,15 +21,21 @@
     <h1>${sessionScope.bruger.navn}, du er på admin siden</h1>
 </div>
 
+
+<div class="mr-5">
+    <form action="RedirectTilMinSide">
+        <input type="submit" class="btn btn-primary mt-2" value="Min side">
+    </form>
+</div>
+
 <p>${requestScope.msgAdmin}</p>
+<p>${sessionScope.id}</p>
 
-<form action="ServletOversigt">
-    <!--TODO this mabey dont work -->
-    <input type="submit" value="Min side">
-</form>
 
-<label>Liste af alle bruger: </label>
-
+<div class="text-center mt-2 mb-2">
+    <h3> Liste af alle bruger: </h3>
+</div>
+<b/>
 
 <style>
     table {

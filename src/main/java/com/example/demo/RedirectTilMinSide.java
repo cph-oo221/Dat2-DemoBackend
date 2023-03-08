@@ -7,8 +7,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletOversigt", value = "/ServletOversigt")
-public class ServletOversigt extends HttpServlet
+@WebServlet(name = "RedirectTilMinSide", value = "/RedirectTilMinSide")
+public class RedirectTilMinSide extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
