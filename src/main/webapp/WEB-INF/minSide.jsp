@@ -44,7 +44,8 @@
                 <form action="slet-user-servlet">
                     <br/>
                     <label><b> Fjerne din bruger: ${sessionScope.bruger.navn} </b></label><br>
-                    <input type="text" hidden name="Valg" value="${applicationScope.personMap.get(sessionScope.bruger.navn)}">
+                    <input type="text" hidden name="Valg"
+                           value="${applicationScope.personMap.get(sessionScope.bruger.navn)}">
                     <input type="submit" class="btn btn-primary mt-2" value="Slet Bruger">
                 </form>
             </div>
@@ -63,6 +64,47 @@
         </div>
     </div>
 </div>
+
+
+<div class="text-center mt-3">
+    <form action="UserEmnerServlet">
+        <br/>
+        <label for="emne"><b> Tilføj et emne </b></label><br>
+        <input type="text" id="emne" class="mt-2" name="emne" placeholder="emne">
+        <input type="submit" class="btn btn-primary mb-1" value="Enter">
+    </form>
+</div>
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Emner</th>
+    </tr>
+
+    <c:forEach var="person" items="${applicationScope.personMap}">
+        <tr>
+            <td>${person.value.emner}</td>
+        </tr>
+    </c:forEach>
+</table>
 
 
 <footer class="mt-4">

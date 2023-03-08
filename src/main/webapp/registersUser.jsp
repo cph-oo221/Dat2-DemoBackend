@@ -21,10 +21,13 @@
     <h1>Register a new user</h1>
 </div>
 
+${requestScope.errorPassword}
+${requestScope.errorUsername}
 
-<!--TODO this is not done at all vvv-->
+
+
 <div class="text-center mt-3">
-    <form action="hello-servlet">
+    <form action="OpretUserServlet">
         <br/>
         <label for="navn"> <b> Indtast et username: </b> </label><br>
         <input type="text" id="navn" name="navn" placeholder="Username"><br>
@@ -33,12 +36,9 @@
         <input type="password" id="password" name="password" placeholder="Password"><br>
         <br/>
 
-        <!-- <input type="url" class="btn btn-link" value="Sing up"> -->
-
         <input type="submit" class="btn btn-primary" value="Enter">
     </form>
 </div>
-<!--TODO ^^^ -->
 
 </body>
 </html>

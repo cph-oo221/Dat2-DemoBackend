@@ -35,6 +35,15 @@
 
         <input type="submit" class="btn btn-primary" value="Enter">
     </form>
+    
 </div>
+
+
+<div class="text-center mt-4">
+    <form action="hello-servlet" method="post">
+        <input type="submit" class="btn btn-primary" value="Sing up">
+    </form>
+</div>
+
 </body>
 </html>

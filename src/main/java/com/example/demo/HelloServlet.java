@@ -30,6 +30,9 @@ public class HelloServlet extends HttpServlet
             personMap.put(person.getNavn(), person);
         }
 
+
+        //getServletContext().setAttribute("emner", personList.get(person.getNavn()).getEmner());
+
         getServletContext().setAttribute("personMap", personMap);
     }
 
@@ -73,5 +76,11 @@ public class HelloServlet extends HttpServlet
             request.setAttribute("msgBruger", "Du er logget ind som bruger");
             request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
         }
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+    {
+        request.getRequestDispatcher("registersUser.jsp").forward(request, response);
     }
 }
