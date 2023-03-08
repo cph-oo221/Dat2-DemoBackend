@@ -30,7 +30,7 @@ public class ChangePasswordServlet extends HttpServlet
         }
 
         System.out.println("ChangePasswordServlet new password: " + newpassword);
-        System.out.println("ChangePasswordServlet, for user:: " + username);
+        System.out.println("ChangePasswordServlet, for user: " + username);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
