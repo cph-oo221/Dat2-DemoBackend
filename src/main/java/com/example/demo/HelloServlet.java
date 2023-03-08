@@ -17,14 +17,9 @@ public class HelloServlet extends HttpServlet
 
     private List<Person> personList = new ArrayList<>();
 
-    public List<Person> getPersonList()
-    {
-        return personList;
-    }
-
     public void init()
     {
-        personList.add(new Person("Oskar", "123"));
+        personList.add(new Person("Oskar", "123", "admin"));
         personList.add(new Person("Lars", "420"));
         personList.add(new Person("Bob", "360"));
         personList.add(new Person("Bo", "69"));
@@ -68,12 +63,22 @@ public class HelloServlet extends HttpServlet
 
         HttpSession session = request.getSession();
 
-        request.setAttribute("navn", navn);
-        request.setAttribute("id", session.getId());
+
+        session.setAttribute("bruger", personMap.get(navn));
+        session.setAttribute("id", session.getId());
 
         session.setAttribute("navn", navn);
         session.setAttribute("password", password);
 
-        request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
+        if(personMap.get(navn).getRoll().equalsIgnoreCase("admin"))
+        {
+            request.setAttribute("msgAdmin", "Du er logget ind som admin");
+            request.getRequestDispatcher("WEB-INF/oversigt.jsp").forward(request, response);
+        }
+        else
+        {
+            request.setAttribute("msgBruger", "Du er logget ind som bruger");
+            request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
+        }
     }
 }

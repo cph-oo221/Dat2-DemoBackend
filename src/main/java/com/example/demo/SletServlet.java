@@ -6,13 +6,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "SletUserServlet", value = "/slet-user-servlet")
-public class SletUserServlet extends HttpServlet
+@WebServlet(name = "SletServlet", value = "/SletServlet")
+public class SletServlet extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -21,9 +18,14 @@ public class SletUserServlet extends HttpServlet
 
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
 
-        System.out.println("SletUserServlet: " + valg);
         personMap.remove(valg);
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/oversigt.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+
     }
 }

@@ -14,33 +14,24 @@ import java.util.Map;
 @WebServlet(name = "ChangePasswordServlet", value = "/change-password-servlet")
 public class ChangePasswordServlet extends HttpServlet
 {
-    //private List<Person> personList = new ArrayList<>();
-
-    private HelloServlet helloServlet = new HelloServlet();
-    private List<Person> personList = helloServlet.getPersonList();
-    @Override
-    public void init()
-    {
-        Map<String, Person> personMap = new HashMap<>();
-        for (Person person : personList)
-        {
-            personMap.put(person.getNavn(), person);
-        }
-
-        getServletContext().setAttribute("personMap", personMap);
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
-        String navn = request.getParameter("navn");
-        String newPassword = request.getParameter("newpassword");
+        String newpassword = request.getParameter("newpassword");
 
-        if(personMap.containsKey(navn))
+        String username = (String) request.getSession().getAttribute("navn");
+
+        Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
+
+        if(personMap.containsKey(username))
         {
-            personMap.put(navn, new Person(navn, newPassword));
+            Person person = personMap.get(username);
+            person.setKode(newpassword);
         }
+
+        System.out.println("ChangePasswordServlet new password: " + newpassword);
+        System.out.println("ChangePasswordServlet, for user:: " + username);
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
