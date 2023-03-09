@@ -77,11 +77,10 @@ public class Person
     @Override
     public String toString()
     {
-        return "Person{" +
-                "navn='" + navn + '\'' +
-                ", kode='" + kode + '\'' +
-                ", roll='" + roll + '\'' +
-                ", emner=" + emner +
-                '}';
+        return "Person: " +
+                "| navn: " + navn +
+                "| kode: " + kode +
+                "| roll: " + roll +
+                "| emner=" + emner + " |";
     }
 }

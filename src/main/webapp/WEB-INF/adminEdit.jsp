@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Admin Edit af ${requestScope.editUser}</title>
+    <title>Admin Edit af ${requestScope.editUserName}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -23,8 +23,54 @@
 
 <p>${sessionScope.id}</p>
 
-<h2>Bruger oplysninger af ${requestScope.editUser} </h2>
 
+<div class="text-center mt-2 mb-2">
+    <h3> Bruger oplysninger af ${requestScope.editUserName}: </h3>
+</div>
+
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Navn</th>
+        <th>Kode ord</th>
+        <th>Role</th>
+        <th>Emner</th>
+    </tr>
+
+    <tr>
+        <td>${applicationScope.personMap.get(requestScope.editUserName).navn}</td>
+        <td>${applicationScope.personMap.get(requestScope.editUserName).kode}</td>
+        <td>${applicationScope.personMap.get(requestScope.editUserName).roll}</td>
+
+        <td>
+            <c:forEach items="${applicationScope.personMap.get(requestScope.editUserName).emner}"
+                       var="emne">
+
+                ${emne} <br/>
+
+            </c:forEach>
+        </td>
+    </tr>
+
+</table>
 
 </body>
 </html>
