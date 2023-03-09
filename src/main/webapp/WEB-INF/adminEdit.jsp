@@ -56,7 +56,7 @@
     }
 
     td, th {
-        border: 1px solid #dddddd;
+        /*border: 1px solid #dddddd;*/
         text-align: left;
         padding: 8px;
     }
@@ -66,7 +66,7 @@
     }
 </style>
 
-<table>
+<table class="table table-dark table-striped">
     <tr>
         <th>Navn</th>
         <th>Kode ord</th>

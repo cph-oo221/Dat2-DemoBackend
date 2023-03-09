@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title> ${sessionScope.bruger.navn} er i mål</title>
+    <title>Logout</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -25,7 +25,7 @@
 
 <div class="text-center mt-5 pt-5 text-bold">
     <form action="logout-servlet">
-        <input type="submit" class="btn btn-primary" value="Log af">
+        <input type="submit" class="btn btn-primary" value="Log Af">
     </form>
 </div>
 
