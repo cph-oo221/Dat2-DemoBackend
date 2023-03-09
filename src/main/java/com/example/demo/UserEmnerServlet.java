@@ -14,6 +14,11 @@ import java.util.Map;
 public class UserEmnerServlet extends HttpServlet
 {
     @Override
+    public void init() throws ServletException
+    {
+    }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         String emne = request.getParameter("emne");
@@ -21,10 +26,7 @@ public class UserEmnerServlet extends HttpServlet
 
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
 
-
         personMap.get(navn).getEmner().add(emne);
-
-        getServletContext().setAttribute("emner", personMap.get(navn).getEmner());
 
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }

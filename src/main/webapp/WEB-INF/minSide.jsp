@@ -99,11 +99,14 @@
         <th>Emner</th>
     </tr>
 
-    <c:forEach var="emner" items="${applicationScope.emner}">
+    <tr>
+        <td>${applicationScope.personMap.get(sessionScope.bruger.navn).emner}</td>
+    </tr>
+
+    <%--<c:forEach var="emne" items="${applicationScope.personMap.get(sessionScope.bruger.navn).emner}">
         <tr>
-            <td>${emner}</td>
-        </tr>
-    </c:forEach>
+            <td>${emne}</td>
+        </tr>--%>
 </table>
 
 
