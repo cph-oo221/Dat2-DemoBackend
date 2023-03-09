@@ -13,6 +13,8 @@ import java.util.Set;
 @WebServlet(name = "RedirectTilEmneSide", value = "/RedirectTilEmneSide")
 public class RedirectTilEmneSide extends HttpServlet
 {
+    // ADDS ALL "EMNER" TO THE SET "EMNELIST" AND SENDS IT TO OVERSIGTAFEMNER.JSP
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

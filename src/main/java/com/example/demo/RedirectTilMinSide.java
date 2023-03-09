@@ -10,6 +10,7 @@ import java.io.IOException;
 @WebServlet(name = "RedirectTilMinSide", value = "/RedirectTilMinSide")
 public class RedirectTilMinSide extends HttpServlet
 {
+    // REDIRECT TO MIN SIDE IF YOU ARE ADMIN FROM OVERSIGT.JSP
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

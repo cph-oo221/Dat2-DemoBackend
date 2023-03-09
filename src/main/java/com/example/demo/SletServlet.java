@@ -11,6 +11,8 @@ import java.util.Map;
 @WebServlet(name = "SletServlet", value = "/SletServlet")
 public class SletServlet extends HttpServlet
 {
+
+    // DELETE USER FROM OVERSIGT.JSP IF YOU ARE ADMIN
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

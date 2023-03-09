@@ -14,6 +14,7 @@ import java.util.Map;
 @WebServlet(name = "SletUserServlet", value = "/slet-user-servlet")
 public class SletUserServlet extends HttpServlet
 {
+    // USER CAN DELETE THERE OWN ACCOUNT
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

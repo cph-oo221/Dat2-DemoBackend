@@ -8,6 +8,9 @@ import java.io.IOException;
 @WebServlet(name = "TilbageOversigtServlet", value = "/TilbageOversigtServlet")
 public class TilbageOversigtServlet extends HttpServlet
 {
+
+    // GO BACK TO OVERSIGT.JSP FROM ADMINEDIT.JSP
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

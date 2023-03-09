@@ -14,6 +14,8 @@ import java.util.Map;
 @WebServlet(name = "ChangePasswordServlet", value = "/change-password-servlet")
 public class ChangePasswordServlet extends HttpServlet
 {
+    // USER CAN CHANGE THERE OWN PASSWORD
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

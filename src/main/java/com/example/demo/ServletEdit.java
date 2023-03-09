@@ -8,6 +8,8 @@ import java.io.IOException;
 @WebServlet(name = "ServletEdit", value = "/ServletEdit")
 public class ServletEdit extends HttpServlet
 {
+    // SENDS THE ADMIN TO ADMINEDIT.JSP WITH THE SELECTED USER DATA
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
