@@ -77,6 +77,8 @@
 
 
 <style>
+
+    <%-- This is the table style for the table "emner" --%>
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -103,6 +105,13 @@
     <c:forEach var="emne" items="${applicationScope.personMap.get(sessionScope.bruger.navn).emner}">
     <tr>
         <td>${emne}</td>
+
+        <td>
+            <form action="UserEmnerSletServlet">
+                <input type="text" hidden name="emneItem" value="${emne}">
+                <input type="submit" value="Slet: ${emne}">
+            </form>
+        </td>
     </tr>
     </c:forEach>
 

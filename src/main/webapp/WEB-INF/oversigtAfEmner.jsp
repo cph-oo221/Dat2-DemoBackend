@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: Oskar
-  Date: 07-03-2023
-  Time: 23:14
+  Date: 09-03-2023
+  Time: 09:03
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Admin panel</title>
+    <title>Emne oversigt</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -18,9 +18,8 @@
 </head>
 <body>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1>${sessionScope.bruger.navn}, du er på admin siden</h1>
+    <h1>${sessionScope.bruger.navn}, du er på admins oversigt af emner</h1>
 </div>
-
 
 <div class="row text-center">
     <div class="col">
@@ -30,26 +29,15 @@
             </form>
         </div>
     </div>
-
-    <div class="col">
-        <div class="mt-3">
-            <form action="RedirectTilEmneSide">
-                <input type="submit" class="btn btn-primary mt-2" value="Admin Oversigt Af emner">
-            </form>
-        </div>
-    </div>
 </div>
-
-
 
 <p>${requestScope.msgAdmin}</p>
 <p>${sessionScope.id}</p>
 
-
 <div class="text-center mt-2 mb-2">
-    <h3> Liste af alle bruger: </h3>
+    <h3> Liste af alle emner: </h3>
 </div>
-<b/>
+
 
 <style>
     table {
@@ -68,32 +56,18 @@
         background-color: #dddddd;
     }
 </style>
-
-
-<table>
+<table class="table" id="sortTable">
     <tr>
-        <th>Navn</th>
-        <th>Valg</th>
+        <th>Emner: </th>
     </tr>
 
-    <c:forEach var="person" items="${applicationScope.personMap}">
-    <tr>
-        <td>${person.value.navn}</td>
-
-        <td>
-            <form action="SletServlet">
-                <input type="text" hidden name="Valg" value="${person.value.navn}">
-                <input type="submit" value="Slet">
-            </form>
-
-            <form action="ServletEdit">
-                <input type="text" hidden name="Valg" value="${person.value.navn}">
-                <input type="submit" value="Edit">
-            </form>
-        </td>
-    </tr>
+    <c:forEach var="emner" items="${applicationScope.emneList}">
+        <tr>
+            <td>${emner}</td>
+        </tr>
     </c:forEach>
 </table>
+<button onclick="sortingTable()">Sort</button>
 
 </body>
 </html>
