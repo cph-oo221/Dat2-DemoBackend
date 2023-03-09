@@ -12,12 +12,10 @@ import java.util.*;
 public class RedirectTilEmneSide extends HttpServlet
 {
     // ADDS ALL "EMNER" TO THE SET "EMNELIST" AND SENDS IT TO OVERSIGTAFEMNER.JSP
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
         Set<String> emneList = new HashSet<>();
-
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
 
         for (Person person : personMap.values())
@@ -34,9 +32,13 @@ public class RedirectTilEmneSide extends HttpServlet
             SortedEmneList.add(emne);
         }
 
+        // SORTS THE EMNE LIST
         Collections.sort(SortedEmneList);
 
         getServletContext().setAttribute("emneList", SortedEmneList);
+
+        // THE UNSORTED EMNE LIST
+        // getServletContext().setAttribute("emneList", emneList);
 
         request.getRequestDispatcher("WEB-INF/oversigtAfEmner.jsp").forward(request, response);
     }
