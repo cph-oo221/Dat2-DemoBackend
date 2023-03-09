@@ -16,6 +16,10 @@ public class ServletEdit extends HttpServlet
            3. see all there elemnets(emner)
          */
 
+        String editUser = request.getParameter("Valg");
+
+        request.setAttribute("editUser", editUser);
+
         request.getRequestDispatcher("WEB-INF/adminEdit.jsp").forward(request, response);
     }
 
