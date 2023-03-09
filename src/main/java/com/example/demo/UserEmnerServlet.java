@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 @WebServlet(name = "UserEmnerServlet", value = "/UserEmnerServlet")
@@ -15,14 +16,15 @@ public class UserEmnerServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        String emne = request.getParameter("emne");
+        String navn = request.getSession().getAttribute("navn").toString();
+
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
 
-        String emne = request.getParameter("emne");
 
-        personMap.get(request.getSession().getAttribute("navn")).getEmner().add(emne);
+        personMap.get(navn).getEmner().add(emne);
 
-        ArrayList<String> emner = personMap.get(request.getSession().getAttribute("navn")).getEmner();
-        getServletContext().setAttribute("emner", emner);
+        getServletContext().setAttribute("emner", personMap.get(navn).getEmner());
 
         request.getRequestDispatcher("WEB-INF/minSide.jsp").forward(request, response);
     }
