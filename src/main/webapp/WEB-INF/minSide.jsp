@@ -99,14 +99,20 @@
         <th>Emner</th>
     </tr>
 
+
+    <c:forEach var="emne" items="${applicationScope.personMap.get(sessionScope.bruger.navn).emner}">
+    <tr>
+        <td>${emne}</td>
+    </tr>
+    </c:forEach>
+
+    <%--
+    If need this also works but not as good.
+    We just get the hole list of emner.
     <tr>
         <td>${applicationScope.personMap.get(sessionScope.bruger.navn).emner}</td>
     </tr>
-
-    <%--<c:forEach var="emne" items="${applicationScope.personMap.get(sessionScope.bruger.navn).emner}">
-        <tr>
-            <td>${emne}</td>
-        </tr>--%>
+    --%>
 </table>
 
 
