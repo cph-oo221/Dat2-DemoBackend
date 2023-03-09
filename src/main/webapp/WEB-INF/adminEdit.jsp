@@ -44,7 +44,7 @@
 
 
 <div class="text-center mt-2 mb-2">
-    <h3> Bruger oplysninger af ${requestScope.editUserName}: </h3>
+    <h3> Bruger oplysninger for ${requestScope.editUserName}: </h3>
 </div>
 
 
@@ -90,6 +90,5 @@
     </tr>
 
 </table>
-
 </body>
 </html>
