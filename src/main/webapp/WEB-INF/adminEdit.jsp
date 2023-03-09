@@ -21,6 +21,25 @@
     <h1>${sessionScope.bruger.navn}, du er på admins redigere side</h1>
 </div>
 
+
+<div class="row text-center">
+    <div class="col">
+        <div class="mt-3">
+            <form action="TilbageOversigtServlet">
+                <input type="submit" class="btn btn-primary mt-2" value="Tilbage">
+            </form>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="mt-3">
+            <form action="RedirectTilMinSide">
+                <input type="submit" class="btn btn-primary mt-2" value="Min side">
+            </form>
+        </div>
+    </div>
+</div>
+
 <p>${sessionScope.id}</p>
 
 
