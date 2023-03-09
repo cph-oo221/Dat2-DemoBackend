@@ -6,9 +6,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(name = "RedirectTilEmneSide", value = "/RedirectTilEmneSide")
 public class RedirectTilEmneSide extends HttpServlet
@@ -30,7 +28,15 @@ public class RedirectTilEmneSide extends HttpServlet
             }
         }
 
-        getServletContext().setAttribute("emneList", emneList);
+        ArrayList<String> SortedEmneList = new ArrayList<>();
+        for (String emne : emneList)
+        {
+            SortedEmneList.add(emne);
+        }
+
+        Collections.sort(SortedEmneList);
+
+        getServletContext().setAttribute("emneList", SortedEmneList);
 
         request.getRequestDispatcher("WEB-INF/oversigtAfEmner.jsp").forward(request, response);
     }
