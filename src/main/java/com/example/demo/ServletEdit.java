@@ -11,7 +11,12 @@ public class ServletEdit extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        /*TODO 1. take the given name from the request,
+           2. you can change all passwords,
+           3. see all there elemnets(emner)
+         */
 
+        request.getRequestDispatcher("WEB-INF/adminEdit.jsp").forward(request, response);
     }
 
     @Override
