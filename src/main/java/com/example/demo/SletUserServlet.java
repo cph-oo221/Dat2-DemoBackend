@@ -18,12 +18,16 @@ public class SletUserServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String valg = request.getParameter("Valg");
+
+        String SletValg = request.getParameter("SletValg");
 
         Map<String, Person> personMap = (Map<String, Person>) getServletContext().getAttribute("personMap");
 
-        System.out.println("SletUserServlet: " + valg);
-        personMap.remove(valg);
+        personMap.remove(SletValg);
+
+        // request.getServletContext().setAttribute("personMap", personMap);
+
+        // request.getRequestDispatcher("WEB-INF/userDelete.jsp").forward(request, response);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

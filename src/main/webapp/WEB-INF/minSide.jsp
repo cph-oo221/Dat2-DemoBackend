@@ -44,8 +44,8 @@
                 <form action="slet-user-servlet">
                     <br/>
                     <label><b> Fjerne din bruger: ${sessionScope.bruger.navn} </b></label><br>
-                    <input type="text" hidden name="Valg"
-                           value="${applicationScope.personMap.get(sessionScope.bruger.navn)}">
+                    <input type="text" hidden name="SletValg"
+                           value="${sessionScope.bruger.navn}">
                     <input type="submit" class="btn btn-primary mt-2" value="Slet Bruger">
                 </form>
             </div>
