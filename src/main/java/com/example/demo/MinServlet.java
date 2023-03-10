@@ -11,13 +11,13 @@ public class MinServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        HttpSession session = request.getSession();
+        /*HttpSession session = request.getSession();
 
         int tal = Integer.parseInt(request.getParameter("tal"));
         request.setAttribute("tal", tal);
         session.setAttribute("tal", tal);
 
-        request.setAttribute("navn", request.getSession().getAttribute("navn"));
+        request.setAttribute("navn", request.getSession().getAttribute("navn"));*/
         request.getRequestDispatcher("WEB-INF/logout.jsp").forward(request, response);
     }
 }

@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
-public class HelloServlet extends HttpServlet
+@WebServlet(name = "mainServlet", value = "/main-servlet")
+public class MainServlet extends HttpServlet
 {
 
     private List<Person> personList = new ArrayList<>();

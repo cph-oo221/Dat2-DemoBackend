@@ -22,7 +22,7 @@
 </div>
 
 <div class="text-center mt-3">
-    <form action="hello-servlet">
+    <form action="main-servlet">
         <br/>
         <label for="navn"> <b> Skriv dit navn: </b> </label><br>
         <input type="text" id="navn" name="navn" placeholder="Username"><br>
@@ -40,7 +40,7 @@
 
 
 <div class="text-center mt-4">
-    <form action="hello-servlet" method="post">
+    <form action="main-servlet" method="post">
         <input type="submit" class="btn btn-primary" value="Sing up">
     </form>
 </div>
