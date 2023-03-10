@@ -18,6 +18,6 @@ public class MinServlet extends HttpServlet
         session.setAttribute("tal", tal);
 
         request.setAttribute("navn", request.getSession().getAttribute("navn"));
-        request.getRequestDispatcher("WEB-INF/duErIMaal.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/logout.jsp").forward(request, response);
     }
 }

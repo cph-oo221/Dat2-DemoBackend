@@ -19,7 +19,7 @@
 <body>
 
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1> ${sessionScope.bruger.navn}, du er i mål, med nummeret ${sessionScope.tal} </h1>
+    <h1> ${sessionScope.bruger.navn}, du er på log ud siden, med nummeret ${sessionScope.tal} </h1>
 </div>
 
 
